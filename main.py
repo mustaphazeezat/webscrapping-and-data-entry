@@ -29,9 +29,9 @@ for listing in all_listings:
     
     try:
         wait = WebDriverWait(driver, 10)
-        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "input[type='text'], input[type='email']")))
+        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "input[type='text']")))
 
-        all_inputs = driver.find_elements(By.CSS_SELECTOR, "input[type='text'], input[type='email']")
+        all_inputs = driver.find_elements(By.CSS_SELECTOR, "input[type='text']")
         all_inputs[0].send_keys(listing["url"])
         all_inputs[1].send_keys(listing["price"])
         all_inputs[2].send_keys(listing["address"])
